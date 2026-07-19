@@ -3,13 +3,13 @@
   LinkedIn, email and CV are already configured.
 */
 const profile = {
-  githubUsername: "YOUR_GITHUB_USERNAME",
+  githubUsername: "GuilhermeSa37",
   linkedinUrl: "https://www.linkedin.com/in/guilherme-s%C3%A1-6a38b1335/",
   email: "guilhermesa.pro@gmail.com"
 };
 
 function configureLinks() {
-  const githubBase = `https://github.com/${profile.GuilhermeSa37}`;
+  const githubBase = `https://github.com/${profile.githubUsername}`;
 
   document.querySelectorAll(".github-link").forEach((link) => {
     link.href = githubBase;
