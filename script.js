@@ -9,7 +9,7 @@ const profile = {
 };
 
 function configureLinks() {
-  const githubBase = `https://github.com/${profile.githubUsername}`;
+  const githubBase = `https://github.com/${profile.GuilhermeSa37}`;
 
   document.querySelectorAll(".github-link").forEach((link) => {
     link.href = githubBase;
