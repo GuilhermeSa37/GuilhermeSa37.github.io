@@ -1,5 +1,35 @@
+const root = document.documentElement;
+const themeToggle = document.querySelector(".theme-toggle");
 const menuButton = document.querySelector(".menu-button");
 const navigationLinks = document.querySelector(".navigation-links");
+
+function resolveInitialTheme() {
+  const savedTheme = localStorage.getItem("portfolio-theme");
+
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: light)").matches
+    ? "light"
+    : "dark";
+}
+
+function applyTheme(theme) {
+  root.dataset.theme = theme;
+
+  const nextTheme = theme === "dark" ? "light" : "dark";
+  themeToggle?.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
+  themeToggle?.setAttribute("title", `Switch to ${nextTheme} mode`);
+}
+
+applyTheme(resolveInitialTheme());
+
+themeToggle?.addEventListener("click", () => {
+  const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+  applyTheme(nextTheme);
+  localStorage.setItem("portfolio-theme", nextTheme);
+});
 
 function closeMenu() {
   navigationLinks?.classList.remove("open");
@@ -18,7 +48,7 @@ navigationLinks?.querySelectorAll("a").forEach((link) => {
 });
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth > 720) closeMenu();
+  if (window.innerWidth > 760) closeMenu();
 });
 
 const revealElements = document.querySelectorAll(".reveal");

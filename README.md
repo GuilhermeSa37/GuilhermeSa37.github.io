@@ -1,77 +1,46 @@
 # Guilherme Sá — Portfolio Website
 
-A dark, technology-oriented and minimalist portfolio for GitHub Pages.
+A restrained, technology-oriented portfolio for GitHub Pages.
 
-## Design direction
+## Version 4 changes
 
-This version uses:
+- Object-storage architecture is now the main featured project.
+- Project order begins with object storage, Secure Chat and PulseFit.
+- Fuller project descriptions and contribution explanations were restored.
+- The text beneath the photograph is now a clean location and availability note.
+- Light and dark themes are available from the navigation bar.
+- The selected theme is saved in the browser.
+- GitHub, LinkedIn and email actions now use one consistent button system.
+- The Cozecare experience links to the official company website.
+- Project repository links use consistent buttons.
 
-- a dark navy palette instead of pure black;
-- a larger full-colour portrait;
-- restrained chip, network, cloud and architecture icons;
-- shorter, more readable text sections;
-- compact project cards with clear hierarchy;
-- subtle technical details without a futuristic or gaming aesthetic;
-- responsive layouts for desktop and mobile.
+## Redeploy
 
-## Publish or redeploy
+Replace the existing website files while preserving the hidden `.git` folder.
 
-Upload all files in this folder to the root of:
+Then run:
 
-```text
-GuilhermeSa37.github.io
+```bash
+git add -A
+git commit -m "Improve portfolio hierarchy and add theme support"
+git push origin main
 ```
 
-The repository root must directly contain:
+GitHub Pages will deploy the new commit automatically.
+
+## Root structure
 
 ```text
 index.html
 styles.css
 script.js
 favicon.svg
-assets/
 README.md
+assets/
 ```
 
-Then commit and push:
 
-```bash
-git add -A
-git commit -m "Refine portfolio with a technology-focused design"
-git push origin main
-```
+## Version 5 change
 
-GitHub Pages will redeploy automatically.
-
-## Current personal links
-
-- GitHub: `https://github.com/GuilhermeSa37`
-- LinkedIn: `https://www.linkedin.com/in/guilherme-s%C3%A1-6a38b1335/`
-- Email: `guilhermesa.pro@gmail.com`
-
-## Updating the CV
-
-Replace:
-
-```text
-assets/documents/Guilherme-Sa-CV.pdf
-```
-
-while keeping the same filename.
-
-## Updating the photograph
-
-Replace:
-
-```text
-assets/images/guilherme-sa.jpg
-```
-
-while keeping the same filename.
-
-
-## Version 3 correction
-
-The floating availability card that overlapped the portrait was removed.
-The availability message now appears as a normal inline status below the
-profile links, so no element sits in front of the photograph or main content.
+Email actions were removed. The visible contact options are now only LinkedIn
+and GitHub, both in the opening section and in the final contact section.
