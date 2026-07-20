@@ -1,100 +1,46 @@
-# Guilherme Sá — Portfolio Website
+# Guilherme Sá - Minimal Portfolio
 
-A responsive static portfolio prepared for GitHub Pages.
+A dark, minimal GitHub Pages portfolio with a simple reading order and no framework dependency.
 
-## Before publishing
+## Publish or replace the current site
 
-Open `script.js` and replace:
-
-```js
-githubUsername: "YOUR_GITHUB_USERNAME"
-```
-
-with your real GitHub username.
-
-The following are already configured:
-
-- LinkedIn profile;
-- Professional email;
-- Current CV PDF;
-- Profile photograph;
-- Repository names used throughout the portfolio.
-
-## Fastest browser-only publication method
-
-1. Create a **public** GitHub repository named exactly:
-
-   ```text
-   YOUR_GITHUB_USERNAME.github.io
-   ```
-
-2. Open that repository on GitHub.
-
-3. Select **Add file → Upload files**.
-
-4. Upload the contents of this folder, not the outer folder itself.
-
-   The repository root should contain:
-
-   ```text
-   index.html
-   styles.css
-   script.js
-   favicon.svg
-   assets/
-   README.md
-   ```
-
-5. Commit the uploaded files.
-
-6. Open **Settings → Pages**.
-
-7. Set:
-
-   ```text
-   Source: Deploy from a branch
-   Branch: main
-   Folder: /(root)
-   ```
-
-8. Save and wait a few minutes.
-
-Your website will be available at:
+Upload the contents of this folder to the root of:
 
 ```text
-https://YOUR_GITHUB_USERNAME.github.io
+GuilhermeSa37.github.io
 ```
 
-## Preview locally
-
-```bash
-python3 -m http.server 8000
-```
-
-Then open:
+The repository root must directly contain:
 
 ```text
-http://localhost:8000
+index.html
+styles.css
+script.js
+favicon.svg
+assets/
+README.md
 ```
 
-## Included assets
+Then open **Settings -> Pages** and select:
 
-- `assets/images/guilherme-sa-profile.png` — main website portrait;
-- `assets/images/guilherme-sa-headshot.jpg` — alternative formal headshot;
-- `assets/documents/Guilherme-Sa-CV.pdf` — current CV.
+```text
+Source: Deploy from a branch
+Branch: main
+Folder: /(root)
+```
 
-## Updating the CV later
+## Updating the CV
 
-Replace:
+Replace this file while keeping the same name:
 
 ```text
 assets/documents/Guilherme-Sa-CV.pdf
 ```
 
-with the revised PDF using the same filename.
+## Local preview
 
-## Important note
+```bash
+python3 -m http.server 8000
+```
 
-Your current CV still describes you as a final-year student with completion
-expected in July 2026. Update the PDF when your degree status or professional
-experience changes.
+Open `http://localhost:8000`.

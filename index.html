@@ -1,383 +1,262 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Guilherme Sá — Software Engineering Portfolio</title>
-  <meta name="description" content="Portfolio of Guilherme Sá, a Computer Engineering graduate interested in software architecture, backend systems, APIs, cloud technologies, and product engineering.">
-  <meta property="og:title" content="Guilherme Sá — Software Engineering Portfolio">
-  <meta property="og:description" content="Systems-minded software engineer focused on architecture, backend engineering, APIs, cloud, and product-oriented software.">
+  <title>Guilherme Sá — Software Engineer</title>
+  <meta name="description" content="Guilherme Sá is a Computer Engineering graduate interested in software architecture, backend systems, APIs, cloud technologies and product engineering.">
+  <meta property="og:title" content="Guilherme Sá — Software Engineer">
+  <meta property="og:description" content="Selected software projects, architecture case studies and professional experience.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/guilherme-sa-profile.png">
+  <meta property="og:image" content="assets/images/guilherme-sa.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#content">Skip to content</a>
 
   <header class="site-header">
-    <nav class="container nav" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Go to top">
-        <span class="brand-mark">GS</span>
-        <span>Guilherme Sá</span>
-      </a>
-
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-
-      <div class="nav-links" id="nav-links">
+    <div class="container header-inner">
+      <a class="name" href="#top">Guilherme Sá</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="nav" aria-label="Main navigation">
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
+        <a href="#work">Work</a>
         <a href="#experience">Experience</a>
-        <a href="#approach">Approach</a>
         <a href="#contact">Contact</a>
-        <button class="theme-toggle" type="button" aria-label="Switch theme">◐</button>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 
-  <main id="main">
-    <section class="hero section" id="top">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Computer Engineering graduate · FEUP</p>
-          <h1>
-            Building toward
-            <span class="accent">systems, architecture and product engineering.</span>
-          </h1>
-
-          <p class="hero-summary">
-            I am Guilherme Sá, an early-career software engineer interested in
-            backend systems, software architecture, APIs, cloud technologies,
-            product development, and the decisions that make software useful,
-            maintainable and evolvable.
+  <main id="content">
+    <section class="intro" id="top">
+      <div class="container intro-grid">
+        <div>
+          <p class="label">Software engineer · Braga, Portugal</p>
+          <h1>Interested in systems, architecture and useful software.</h1>
+          <p class="intro-text">
+            I am a Computer Engineering graduate from FEUP with practical
+            experience in a HealthTech startup. I enjoy understanding how
+            requirements, APIs, services and technical decisions come together
+            to form maintainable products.
           </p>
-
-          <div class="actions">
-            <a class="button primary" href="#projects">View my work</a>
-            <a class="button secondary github-link" href="#">GitHub</a>
-            <a class="button secondary" href="assets/documents/Guilherme-Sa-CV.pdf" target="_blank">Download CV</a>
+          <div class="links">
+            <a class="primary-link" href="#work">Selected work</a>
+            <a href="assets/documents/Guilherme-Sa-CV.pdf" target="_blank">CV</a>
+            <a href="https://github.com/GuilhermeSa37" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/guilherme-s%C3%A1-6a38b1335/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
-
-          <ul class="hero-facts" aria-label="Profile highlights">
-            <li><strong>FEUP graduate</strong><span>Computer Engineering</span></li>
-            <li><strong>Startup experience</strong><span>HealthTech product development</span></li>
-            <li><strong>Systems focused</strong><span>Architecture, backend and integrations</span></li>
-          </ul>
         </div>
 
-        <aside class="profile-card reveal">
-          <div class="photo-wrap">
-            <img src="assets/images/guilherme-sa-profile.png" alt="Portrait of Guilherme Sá">
-          </div>
-          <div class="profile-card-content">
-            <p class="availability"><span></span> Open to early-career opportunities</p>
-            <h2>Engineering interests</h2>
-            <ul>
-              <li>Software architecture and system design</li>
-              <li>Backend, APIs and integrations</li>
-              <li>Cloud and object-storage systems</li>
-              <li>Product engineering and requirements</li>
-              <li>Maintainability, observability and trade-offs</li>
-            </ul>
-          </div>
-        </aside>
+        <img class="portrait" src="assets/images/guilherme-sa.jpg" alt="Portrait of Guilherme Sá">
       </div>
     </section>
 
-    <section class="section muted" id="about">
-      <div class="container split">
-        <div class="section-heading reveal">
-          <p class="eyebrow">About me</p>
-          <h2>I am interested in how the whole system fits together.</h2>
+    <section class="section" id="about">
+      <div class="container two-column">
+        <div>
+          <p class="label">About</p>
+          <h2>Engineering beyond isolated implementation.</h2>
         </div>
-
-        <div class="prose reveal">
+        <div class="body-copy">
           <p>
-            I enjoy understanding how components interact, how requirements
-            shape technical decisions, how APIs and services should be
-            separated, and how architecture affects maintainability over time.
+            I am particularly motivated by the structural and analytical side
+            of software engineering: system boundaries, API design, backend
+            flows, integrations, maintainability and technical trade-offs.
           </p>
           <p>
-            My work includes secure client-server communication, compiler
-            optimizations, a custom PHP framework, interactive WebGL graphics,
-            and sanitized architecture case studies for large-data workflows.
+            My projects span distributed systems, compiler optimization,
+            full-stack development, computer graphics and object-storage
+            architecture. The common thread is an interest in understanding the
+            whole system and making it easier to reason about and evolve.
           </p>
           <p>
-            I care about quality, documentation and clear abstractions, while
-            recognizing that professional engineering also requires
-            pragmatism, incremental improvement and delivery under real
-            constraints.
+            I care about quality and clear structure, while recognizing that
+            professional engineering also requires pragmatism, incremental
+            improvement and delivery under real constraints.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="strengths">
+    <section class="section section-bordered" id="work">
       <div class="container">
-        <div class="section-heading centered reveal">
-          <p class="eyebrow">Engineering strengths</p>
-          <h2>The perspective I bring to technical work.</h2>
+        <div class="section-heading">
+          <p class="label">Selected work</p>
+          <h2>Projects and case studies</h2>
+          <p>A curated selection rather than a complete list of coursework.</p>
         </div>
 
-        <div class="card-grid four">
-          <article class="info-card reveal">
-            <span class="index">01</span>
-            <h3>Systems thinking</h3>
-            <p>I follow responsibilities and data across the system instead of treating features as isolated code.</p>
-          </article>
-          <article class="info-card reveal">
-            <span class="index">02</span>
-            <h3>Architecture mindset</h3>
-            <p>I care about boundaries, dependencies, APIs, flows, abstractions and long-term evolution.</p>
-          </article>
-          <article class="info-card reveal">
-            <span class="index">03</span>
-            <h3>Product awareness</h3>
-            <p>I want to understand the user, problem and constraints before choosing a technical solution.</p>
-          </article>
-          <article class="info-card reveal">
-            <span class="index">04</span>
-            <h3>Quality and trade-offs</h3>
-            <p>I value maintainability and testing while balancing speed, complexity and real-world delivery needs.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section muted" id="projects">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Featured projects</p>
-          <h2>Selected work that represents how I approach engineering.</h2>
-          <p>Personal work, selected university projects and sanitized architecture case studies.</p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card featured reveal">
-            <div class="project-top">
-              <span class="project-type">Independent full-stack project</span>
-              <span class="index">01</span>
+        <div class="project-list">
+          <article class="project">
+            <div class="project-heading">
+              <div>
+                <h3>PulseFit Gym Management</h3>
+                <p class="project-kind">Independent full-stack project</p>
+              </div>
+              <a href="https://github.com/GuilhermeSa37/pulsefit-gym-management" target="_blank" rel="noreferrer">Repository ↗</a>
             </div>
-            <div>
-              <h3>PulseFit Gym Management</h3>
-              <p>
-                A complete gym-management platform built independently using a
-                custom lightweight PHP framework, role-based dashboards,
-                scheduling, enrollments, analytics and a JSON API.
-              </p>
-            </div>
-            <ul class="tags">
-              <li>PHP</li><li>JavaScript</li><li>SQLite</li><li>Custom MVC</li><li>REST API</li>
-            </ul>
-            <div class="contribution">
-              <strong>My role</strong>
-              <p>Designed and implemented the full application, framework structure, routing, database layer, authentication, dashboards, workflows and API.</p>
-            </div>
-            <a class="project-link repository-link" data-repository="pulsefit-gym-management" href="#">View repository ↗</a>
+            <p>
+              A gym-management platform built independently with a custom
+              lightweight PHP framework, role-based dashboards, class
+              scheduling, enrollments, analytics, authentication and a JSON API.
+            </p>
+            <p class="contribution"><strong>Focus:</strong> complete application architecture, framework design, routing, persistence, authentication and product workflows.</p>
+            <ul class="tags"><li>PHP</li><li>JavaScript</li><li>SQLite</li><li>MVC</li><li>REST API</li></ul>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-top">
-              <span class="project-type">Distributed systems</span>
-              <span class="index">02</span>
+          <article class="project">
+            <div class="project-heading">
+              <div>
+                <h3>Secure Distributed Chat</h3>
+                <p class="project-kind">Distributed systems project</p>
+              </div>
+              <a href="https://github.com/GuilhermeSa37/secure-distributed-chat" target="_blank" rel="noreferrer">Repository ↗</a>
             </div>
-            <div>
-              <h3>Secure Distributed Chat</h3>
-              <p>A Java 21 client-server chat system with TLS, virtual threads, authentication, reconnectable sessions, rooms and slow-client protection.</p>
-            </div>
-            <ul class="tags">
-              <li>Java 21</li><li>TLS</li><li>Networking</li><li>Concurrency</li>
-            </ul>
-            <div class="contribution">
-              <strong>My role</strong>
-              <p>Designed the initial architecture and implemented TLS, sockets, virtual-thread concurrency, user management, concurrent state and part of fault tolerance.</p>
-            </div>
-            <a class="project-link repository-link" data-repository="secure-distributed-chat" href="#">View repository ↗</a>
+            <p>
+              A Java 21 client-server chat system with TLS, virtual threads,
+              authentication, reconnectable sessions, multiple rooms and
+              slow-client protection.
+            </p>
+            <p class="contribution"><strong>Focus:</strong> initial architecture, socket and TLS communication, concurrency, user management, safe shared state and part of fault tolerance.</p>
+            <ul class="tags"><li>Java 21</li><li>TLS</li><li>Networking</li><li>Concurrency</li></ul>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-top">
-              <span class="project-type">Compiler engineering</span>
-              <span class="index">03</span>
+          <article class="project">
+            <div class="project-heading">
+              <div>
+                <h3>Compiler Optimization Case Study</h3>
+                <p class="project-kind">Static analysis and performance</p>
+              </div>
+              <a href="https://github.com/GuilhermeSa37/compiler-optimization-case-study" target="_blank" rel="noreferrer">Repository ↗</a>
             </div>
-            <div>
-              <h3>Compiler Optimization Case Study</h3>
-              <p>A framework-independent adaptation of the optimization and register-allocation work I implemented for a larger university compiler.</p>
-            </div>
-            <ul class="tags">
-              <li>Java</li><li>Static analysis</li><li>Data flow</li><li>Graph coloring</li>
-            </ul>
-            <div class="contribution">
-              <strong>My role</strong>
-              <p>Implemented propagation, folding, branch and dead-code elimination, liveness, interference graphs and register allocation.</p>
-            </div>
-            <a class="project-link repository-link" data-repository="compiler-optimization-case-study" href="#">View repository ↗</a>
+            <p>
+              A standalone adaptation of the optimization and register-allocation
+              work developed for a larger university compiler project.
+            </p>
+            <p class="contribution"><strong>Focus:</strong> constant propagation and folding, dead-code elimination, liveness analysis, interference graphs and graph-coloring register allocation.</p>
+            <ul class="tags"><li>Java</li><li>Compilers</li><li>Data flow</li><li>Graph coloring</li></ul>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-top">
-              <span class="project-type">Computer graphics</span>
-              <span class="index">04</span>
+          <article class="project">
+            <div class="project-heading">
+              <div>
+                <h3>Prairie Survival</h3>
+                <p class="project-kind">WebGL and interactive graphics</p>
+              </div>
+              <a href="https://github.com/GuilhermeSa37/prairie-survival-webgl" target="_blank" rel="noreferrer">Repository ↗</a>
             </div>
-            <div>
-              <h3>Prairie Survival WebGL</h3>
-              <p>An interactive WebGL survival scene featuring custom GLSL shaders, procedural environments, gameplay systems and atmospheric rendering.</p>
-            </div>
-            <ul class="tags">
-              <li>WebGL</li><li>JavaScript</li><li>GLSL</li><li>Game systems</li>
-            </ul>
-            <div class="contribution">
-              <strong>My role</strong>
-              <p>Built the barn, delivery zone, environmental assets, directional-arrow shader, much of the gameplay, sky dome and clouds.</p>
-            </div>
-            <div class="link-row">
-              <a class="project-link repository-link" data-repository="prairie-survival-webgl" href="#">View repository ↗</a>
-              <a class="project-link live-link" data-live-path="prairie-survival-webgl" href="#">Live demo ↗</a>
-            </div>
+            <p>
+              An interactive WebGL survival game with procedural terrain,
+              custom GLSL shaders, gameplay systems, animation and atmospheric
+              rendering.
+            </p>
+            <p class="contribution"><strong>Focus:</strong> gameplay flow, environmental systems, scene integration, the directional-arrow shader, sky dome and clouds.</p>
+            <ul class="tags"><li>WebGL</li><li>JavaScript</li><li>GLSL</li><li>Computer graphics</li></ul>
           </article>
 
-          <article class="project-card architecture reveal">
-            <div class="project-top">
-              <span class="project-type">Architecture case study</span>
-              <span class="index">05</span>
+          <article class="project">
+            <div class="project-heading">
+              <div>
+                <h3>Object-Storage Upload Architecture</h3>
+                <p class="project-kind">Sanitized architecture case study</p>
+              </div>
+              <a href="https://github.com/GuilhermeSa37/object-storage-upload-architecture" target="_blank" rel="noreferrer">Case study ↗</a>
             </div>
-            <div>
-              <h3>Object-Storage Upload Architecture</h3>
-              <p>
-                A sanitized architecture case study for large-file workflows
-                using S3-compatible storage, presigned URLs, multipart uploads,
-                recovery state and metadata coordination.
-              </p>
-            </div>
-            <ul class="tags">
-              <li>System design</li><li>Object storage</li><li>Multipart upload</li><li>Security</li>
-            </ul>
-            <div class="contribution">
-              <strong>What it demonstrates</strong>
-              <p>Control-plane and data-plane separation, resumability, temporary access, storage organization and trade-off analysis.</p>
-            </div>
-            <p class="confidentiality">Identifying details, proprietary code and internal infrastructure are intentionally excluded.</p>
-            <a class="project-link repository-link" data-repository="object-storage-upload-architecture" href="#">View case study ↗</a>
+            <p>
+              A generalized design for large-file workflows using
+              S3-compatible storage, presigned URLs, multipart transfers,
+              recovery state and metadata coordination.
+            </p>
+            <p class="contribution"><strong>Focus:</strong> control-plane and data-plane separation, resumability, access control, storage organization and trade-off analysis.</p>
+            <p class="note">Identifying details, proprietary code and internal infrastructure are intentionally omitted.</p>
+            <ul class="tags"><li>System design</li><li>Object storage</li><li>Multipart upload</li><li>Security</li></ul>
           </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="experience">
-      <div class="container split">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Professional experience</p>
-          <h2>Exposure to real product constraints beyond coursework.</h2>
+      <div class="container two-column">
+        <div>
+          <p class="label">Experience</p>
+          <h2>Real product work in a startup environment.</h2>
         </div>
-
-        <article class="experience-card reveal">
-          <div class="experience-top">
+        <article class="experience">
+          <div class="experience-heading">
             <div>
-              <p class="role">Software Development Contributor</p>
-              <h3>CozeCare · HealthTech startup</h3>
+              <h3>Software Development Contributor</h3>
+              <p>CozeCare · HealthTech</p>
             </div>
-            <span>Dec 2025 — Present</span>
+            <p>Dec 2025 — Present</p>
           </div>
-
           <p>
-            Contributing in a real startup context through feature development
-            and maintenance, requirements analysis, testing, technical problem
-            solving and collaboration with the product and technical team.
+            Contributing to feature development and maintenance, requirements
+            analysis, testing, debugging and iterative product work within an
+            existing technical system.
           </p>
-
-          <ul class="experience-list">
-            <li>Work with existing systems and evolving product requirements.</li>
+          <ul>
+            <li>Work with changing requirements and existing product constraints.</li>
             <li>Investigate issues across service and integration boundaries.</li>
-            <li>Contribute to iterative product development and technical decisions.</li>
-            <li>Gain practical experience balancing quality, uncertainty and delivery.</li>
+            <li>Collaborate with the technical team on incremental improvements.</li>
+            <li>Use and integrate technologies including React, Java, JavaScript, Cloudflare, Azure, Supabase and Sumsub.</li>
           </ul>
-
-          <div class="technology-row">
-            <span>React</span><span>Java</span><span>JavaScript</span><span>Cloudflare</span>
-            <span>Azure</span><span>Supabase</span><span>Sumsub</span>
-          </div>
         </article>
       </div>
     </section>
 
-    <section class="section muted" id="approach">
-      <div class="container">
-        <div class="section-heading centered reveal">
-          <p class="eyebrow">How I approach engineering</p>
-          <h2>Thoughtful structure without losing pragmatism.</h2>
-        </div>
-
-        <div class="card-grid four">
-          <article class="approach-card reveal">
-            <span>Understand</span>
-            <h3>Start with the problem and constraints.</h3>
-            <p>Technology choices make more sense after understanding users, requirements, risks and context.</p>
-          </article>
-          <article class="approach-card reveal">
-            <span>Structure</span>
-            <h3>Make boundaries and responsibilities explicit.</h3>
-            <p>Clear interfaces and data flows make systems easier to maintain, debug and evolve.</p>
-          </article>
-          <article class="approach-card reveal">
-            <span>Observe</span>
-            <h3>Make system behavior visible.</h3>
-            <p>I debug from important boundaries, trace the data or request, and progressively narrow the issue.</p>
-          </article>
-          <article class="approach-card reveal">
-            <span>Balance</span>
-            <h3>Apply practices proportionally.</h3>
-            <p>Testing, automation and process should solve real problems rather than become detached rituals.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="interests">
-      <div class="container interests-panel reveal">
+    <section class="section section-bordered">
+      <div class="container two-column">
         <div>
-          <p class="eyebrow">Current interests</p>
-          <h2>Where I want to grow next.</h2>
-          <p>I am building toward backend, platform, systems, architecture and product-aware engineering roles.</p>
+          <p class="label">Approach</p>
+          <h2>How I think about engineering work.</h2>
         </div>
-        <ul class="interest-list">
-          <li>Software architecture</li>
-          <li>Backend and platform systems</li>
-          <li>APIs and integrations</li>
-          <li>Cloud and object storage</li>
-          <li>Observability and debugging</li>
-          <li>Product engineering</li>
-          <li>Requirements and stakeholders</li>
-          <li>Technical decision-making</li>
-        </ul>
+        <dl class="principles">
+          <div>
+            <dt>Understand the context</dt>
+            <dd>Start with the problem, users, constraints and risks before selecting technology.</dd>
+          </div>
+          <div>
+            <dt>Make boundaries clear</dt>
+            <dd>Explicit responsibilities and interfaces make systems easier to maintain and debug.</dd>
+          </div>
+          <div>
+            <dt>Make behaviour observable</dt>
+            <dd>Trace data and requests through important boundaries to progressively narrow problems.</dd>
+          </div>
+          <div>
+            <dt>Balance quality and delivery</dt>
+            <dd>Apply testing, automation and process in proportion to the system and its real needs.</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
-    <section class="section contact-section" id="contact">
-      <div class="container contact-panel reveal">
-        <p class="eyebrow">Contact</p>
-        <h2>Interested in building reliable and useful systems together?</h2>
-        <p>
-          I am open to junior and early-career software engineering
-          opportunities where I can contribute, learn from experienced
-          engineers, and continue developing my systems and architecture skills.
-        </p>
-        <div class="actions centered-actions">
-          <a class="button primary email-link" href="#">Email me</a>
-          <a class="button secondary linkedin-link" href="#">LinkedIn</a>
-          <a class="button secondary github-link" href="#">GitHub</a>
+    <section class="section contact" id="contact">
+      <div class="container contact-inner">
+        <div>
+          <p class="label">Contact</p>
+          <h2>Open to early-career software engineering opportunities.</h2>
+          <p>
+            Particularly interested in backend, systems, platform,
+            architecture and product-aware engineering roles.
+          </p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:guilhermesa.pro@gmail.com">guilhermesa.pro@gmail.com</a>
+          <a href="https://github.com/GuilhermeSa37" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/guilherme-s%C3%A1-6a38b1335/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a href="assets/documents/Guilherme-Sa-CV.pdf" target="_blank">Download CV ↗</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <div class="container footer-inner">
       <p>© <span id="year"></span> Guilherme Sá</p>
-      <p>Selected engineering work, architecture thinking and technical growth.</p>
+      <p>Software engineering, systems and architecture.</p>
     </div>
   </footer>
 </body>
