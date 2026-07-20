@@ -1,10 +1,22 @@
-# Guilherme Sá - Minimal Portfolio
+# Guilherme Sá — Portfolio Website
 
-A dark, minimal GitHub Pages portfolio with a simple reading order and no framework dependency.
+A dark, technology-oriented and minimalist portfolio for GitHub Pages.
 
-## Publish or replace the current site
+## Design direction
 
-Upload the contents of this folder to the root of:
+This version uses:
+
+- a dark navy palette instead of pure black;
+- a larger full-colour portrait;
+- restrained chip, network, cloud and architecture icons;
+- shorter, more readable text sections;
+- compact project cards with clear hierarchy;
+- subtle technical details without a futuristic or gaming aesthetic;
+- responsive layouts for desktop and mobile.
+
+## Publish or redeploy
+
+Upload all files in this folder to the root of:
 
 ```text
 GuilhermeSa37.github.io
@@ -21,26 +33,38 @@ assets/
 README.md
 ```
 
-Then open **Settings -> Pages** and select:
+Then commit and push:
 
-```text
-Source: Deploy from a branch
-Branch: main
-Folder: /(root)
+```bash
+git add -A
+git commit -m "Refine portfolio with a technology-focused design"
+git push origin main
 ```
+
+GitHub Pages will redeploy automatically.
+
+## Current personal links
+
+- GitHub: `https://github.com/GuilhermeSa37`
+- LinkedIn: `https://www.linkedin.com/in/guilherme-s%C3%A1-6a38b1335/`
+- Email: `guilhermesa.pro@gmail.com`
 
 ## Updating the CV
 
-Replace this file while keeping the same name:
+Replace:
 
 ```text
 assets/documents/Guilherme-Sa-CV.pdf
 ```
 
-## Local preview
+while keeping the same filename.
 
-```bash
-python3 -m http.server 8000
+## Updating the photograph
+
+Replace:
+
+```text
+assets/images/guilherme-sa.jpg
 ```
 
-Open `http://localhost:8000`.
+while keeping the same filename.
