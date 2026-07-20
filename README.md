@@ -68,3 +68,10 @@ assets/images/guilherme-sa.jpg
 ```
 
 while keeping the same filename.
+
+
+## Version 3 correction
+
+The floating availability card that overlapped the portrait was removed.
+The availability message now appears as a normal inline status below the
+profile links, so no element sits in front of the photograph or main content.
