@@ -44,3 +44,10 @@ assets/
 
 Email actions were removed. The visible contact options are now only LinkedIn
 and GitHub, both in the opening section and in the final contact section.
+
+
+## Version 6 change
+
+The LinkedIn and GitHub buttons now include oversized monochrome logo
+watermarks cropped into their backgrounds. The logos remain deliberately faint
+in both light and dark mode and become only slightly more visible on hover.
