@@ -592,17 +592,18 @@ p {
 }
 
 .project-grid {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(0, 100%);
+  display: flex;
+  align-items: flex-start;
   gap: 1rem;
   max-width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
   overscroll-behavior-x: contain;
   padding: 0.25rem 0 0.65rem;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  transition: height 180ms ease;
 }
 
 .project-grid::-webkit-scrollbar {
@@ -619,13 +620,11 @@ p {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 32rem;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.78fr);
-  grid-template-rows: auto auto 1fr auto;
-  column-gap: clamp(2.5rem, 6vw, 5rem);
-  row-gap: 1.35rem;
-  padding: clamp(1.8rem, 4vw, 2.4rem);
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: clamp(1.55rem, 3vw, 2rem);
   border: 1px solid var(--line);
   border-radius: var(--radius-medium);
   background: var(--panel);
@@ -738,8 +737,8 @@ html[data-theme="light"] .aws-brandmark {
 }
 
 .project-grid .project-header {
-  grid-column: 1 / -1;
-  align-self: start;
+  width: 100%;
+  align-self: stretch;
 }
 
 .project-icon {
@@ -769,7 +768,7 @@ html[data-theme="light"] .aws-brandmark {
 }
 
 .project-grid .project-card h3 {
-  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
 }
 
 .project-summary {
@@ -777,11 +776,11 @@ html[data-theme="light"] .aws-brandmark {
 }
 
 .project-grid .project-summary {
-  grid-column: 1;
-  grid-row: 2;
-  max-width: 650px;
+  width: 100%;
+  max-width: 760px;
+  align-self: stretch;
   color: var(--text);
-  font-size: 1.04rem;
+  font-size: 1rem;
 }
 
 .project-featured .project-summary {
@@ -797,11 +796,9 @@ html[data-theme="light"] .aws-brandmark {
 }
 
 .project-grid .project-detail-grid {
-  grid-column: 2;
-  grid-row: 2;
-  grid-template-columns: 1fr;
-  align-self: start;
-  gap: 1.15rem;
+  width: 100%;
+  max-width: 880px;
+  align-self: stretch;
 }
 
 .project-detail {
@@ -812,9 +809,9 @@ html[data-theme="light"] .aws-brandmark {
 }
 
 .project-grid .project-card > .project-detail {
-  grid-column: 2;
-  grid-row: 2 / span 2;
-  align-self: start;
+  width: 100%;
+  max-width: 760px;
+  align-self: stretch;
 }
 
 .project-detail strong {
@@ -837,9 +834,9 @@ html[data-theme="light"] .aws-brandmark {
 }
 
 .project-grid .confidentiality-note {
-  grid-column: 2;
-  grid-row: 3;
-  align-self: end;
+  width: 100%;
+  max-width: 880px;
+  align-self: stretch;
 }
 
 .tags,
@@ -865,9 +862,7 @@ html[data-theme="light"] .aws-brandmark {
 }
 
 .project-grid .tags {
-  grid-column: 1;
-  grid-row: 3;
-  align-self: end;
+  align-self: flex-start;
 }
 
 .project-button {
@@ -888,10 +883,7 @@ html[data-theme="light"] .aws-brandmark {
 
 .project-grid .project-actions,
 .project-grid .project-card > .project-button {
-  grid-column: 1;
-  grid-row: 4;
-  align-self: end;
-  justify-self: start;
+  align-self: flex-start;
   margin-top: 0;
 }
 
@@ -1859,15 +1851,8 @@ html[data-theme="light"] .project-card:hover .project-watermark {
     grid-column: auto;
   }
 
-  .project-grid {
-    grid-auto-columns: minmax(0, 100%);
-  }
-
   .project-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    min-height: 0;
+    flex-basis: 100%;
   }
 
   .project-grid .project-header,
