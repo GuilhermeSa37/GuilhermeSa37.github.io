@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PulseFit Gym Management — Guilherme Sá</title>
+  <meta name="description" content="Independent PHP gym-management application covering a custom MVC request lifecycle, role-based workflows, relational data and security controls.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=20260816-3">
+  <script src="../script.js?v=20260816-3" defer></script>
+</head>
+
+<body class="case-study-page">
+  <a class="skip-link" href="#case-study-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="container navigation" aria-label="Main navigation">
+      <a class="brand" href="../index.html#top" aria-label="Go to Guilherme Sá's homepage">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="6.5" y="6.5" width="11" height="11" rx="2"></rect>
+            <path d="M9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"></path>
+          </svg>
+        </span>
+        <span>Guilherme Sá</span>
+      </a>
+
+      <div class="navigation-actions">
+        <div class="navigation-links" id="navigation-links">
+          <a href="../index.html#work">Projects</a>
+          <a href="../index.html#experience">Experience</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3.5"></circle>
+            <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"></path>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.2 8.2 0 1 0 11.2 11.2Z"></path></svg>
+        </button>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation-links">
+          <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="case-study-content">
+    <section class="case-study-hero">
+      <span class="case-study-brandmark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false">
+          <path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z"></path>
+        </svg>
+      </span>
+      <div class="container reveal">
+        <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> Selected work</a>
+        <p class="eyebrow">Independent full-stack project</p>
+        <h1>PulseFit Gym Management.</h1>
+        <p class="case-study-lede">
+          A complete gym-management application built independently to explore
+          backend structure, authentication, multi-role workflows, relational
+          data rules and frontend-backend integration.
+        </p>
+        <div class="case-study-meta" aria-label="Project technologies and themes">
+          <span>PHP 8</span><span>Custom MVC</span><span>SQLite</span>
+          <span>JavaScript</span><span>RBAC</span><span>JSON API</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-main">
+      <div class="container case-study-layout">
+        <div class="case-study-content">
+          <section class="case-study-section reveal" id="context">
+            <p class="eyebrow">Ownership</p>
+            <h2>One application covering the full request-to-database path.</h2>
+            <p>
+              PulseFit began as a university web project and became a complete
+              independent application. I designed and implemented the routing,
+              controllers, authentication, authorization, database layer,
+              role-specific workflows, JSON API and browser behaviour.
+            </p>
+            <p>
+              I deliberately built a small MVC structure instead of starting
+              with Laravel or Symfony. MVC—Model, View, Controller—separates
+              data access, presentation and request coordination. Recreating
+              those responsibilities made the request lifecycle visible and
+              helped me understand what production frameworks normally provide.
+            </p>
+            <div class="project-facts">
+              <div class="project-fact"><span>Authorship</span><strong>Designed and implemented independently</strong></div>
+              <div class="project-fact"><span>Product</span><strong>Multi-role gym management platform</strong></div>
+              <div class="project-fact"><span>Stack</span><strong>PHP 8, SQLite, PDO and vanilla JavaScript</strong></div>
+              <div class="project-fact"><span>Approach</span><strong>Server-rendered core with selected asynchronous interactions</strong></div>
+            </div>
+          </section>
+
+          <section class="case-study-section reveal" id="architecture">
+            <p class="eyebrow">Request lifecycle</p>
+            <h2>Each request passes through explicit routing and security checks.</h2>
+            <p>
+              Every dynamic request enters through one front controller. A
+              front controller is a single entry point that initializes the
+              application before dispatching work. The router matches the HTTP
+              method and path to a controller action; that action checks access,
+              validates input, calls the data layer and returns HTML, JSON or a redirect.
+            </p>
+            <div class="architecture-map" aria-label="Simplified PulseFit architecture">
+              <div class="architecture-node"><strong>Browser</strong><span>Forms, dashboards and searches</span></div>
+              <div class="architecture-node accent"><strong>Front controller</strong><span>One entry point for dynamic requests</span></div>
+              <div class="architecture-node"><strong>Router</strong><span>Matches method and path</span></div>
+              <div class="architecture-node accent"><strong>Controllers</strong><span>Access, validation and use cases</span></div>
+              <div class="architecture-node"><strong>Models + SQLite</strong><span>Queries and business constraints</span></div>
+              <div class="architecture-node"><strong>Views + JSON</strong><span>HTML pages and API responses</span></div>
+            </div>
+            <ol class="flow-list">
+              <li><div><strong>Resolve.</strong> The router selects the action for the request method and path.</div></li>
+              <li><div><strong>Protect.</strong> Login, role and CSRF checks run before state changes.</div></li>
+              <li><div><strong>Validate.</strong> The controller rejects invalid input and preserves useful error feedback.</div></li>
+              <li><div><strong>Execute.</strong> Prepared database queries and schema rules apply the use case.</div></li>
+              <li><div><strong>Respond.</strong> The application renders a page, redirects, or returns a consistent JSON result.</div></li>
+            </ol>
+          </section>
+
+          <section class="case-study-section reveal" id="workflows">
+            <p class="eyebrow">Product workflows</p>
+            <h2>Members, trainers and administrators share one domain model.</h2>
+            <div class="content-grid">
+              <article class="content-card">
+                <h3>Members</h3>
+                <p>Manage profiles, browse schedules, enrol or cancel within capacity, review attended sessions and inspect history.</p>
+              </article>
+              <article class="content-card">
+                <h3>Trainers</h3>
+                <p>Maintain professional information, inspect teaching schedules, manage class rosters and record attendance.</p>
+              </article>
+              <article class="content-card">
+                <h3>Administrators</h3>
+                <p>Manage users and roles, schedule classes, assign trainers and rooms, and maintain equipment information.</p>
+              </article>
+              <article class="content-card">
+                <h3>Public access</h3>
+                <p>Browse classes, trainers and equipment through server-rendered pages or a small read-oriented JSON API.</p>
+              </article>
+            </div>
+            <p class="section-followup">
+              This range matters because authorization is not just a menu change.
+              The server checks whether the authenticated role may perform each
+              action, while the database protects critical relationships below the UI.
+            </p>
+          </section>
+
+          <section class="case-study-section reveal" id="data-security">
+            <p class="eyebrow">Data and security</p>
+            <h2>Important rules are enforced at more than one layer.</h2>
+            <p>
+              The relational model connects users, trainer profiles, class
+              definitions, scheduled sessions, enrolments, attendance, reviews,
+              equipment and bookings. SQLite constraints and triggers reinforce
+              rules that should remain true even if a controller contains a bug.
+            </p>
+            <div class="technical-table-wrap">
+              <table class="technical-table">
+                <thead><tr><th>Rule</th><th>Why it exists</th></tr></thead>
+                <tbody>
+                  <tr><td>Class capacity cannot be exceeded</td><td>Prevents concurrent requests from overbooking a session.</td></tr>
+                  <tr><td>A review requires recorded attendance</td><td>Links feedback to a session the member actually attended.</td></tr>
+                  <tr><td>Trainer records require the trainer role</td><td>Prevents contradictory account and domain data.</td></tr>
+                  <tr><td>Bookings update slot availability</td><td>Keeps schedules consistent after a reservation.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="content-grid">
+              <article class="content-card">
+                <h3>Request security</h3>
+                <ul class="technical-list">
+                  <li>Hashed passwords and regenerated session identifiers.</li>
+                  <li>Role checks on protected operations.</li>
+                  <li>CSRF tokens on state-changing forms.</li>
+                  <li>Prepared SQL statements and escaped HTML output.</li>
+                </ul>
+              </article>
+              <article class="content-card">
+                <h3>Profile uploads</h3>
+                <ul class="technical-list">
+                  <li>Maximum file-size enforcement.</li>
+                  <li>MIME inspection instead of trusting extensions.</li>
+                  <li>Random server-generated filenames.</li>
+                  <li>Controlled public upload location.</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="case-study-section reveal" id="api-validation">
+            <p class="eyebrow">API and evidence</p>
+            <h2>A focused API and repeatable system checks.</h2>
+            <p>
+              The JSON API intentionally exposes only public, read-oriented
+              information about classes, trainers and equipment. Filters and
+              result limits are explicit, and success and error responses follow
+              consistent shapes. It complements the product rather than pretending
+              to be a complete versioned CRUD platform.
+            </p>
+            <p>
+              A scripted verification flow lints PHP source, rebuilds the sample
+              database, validates required records, starts the application and
+              smoke-tests public pages and API responses. It also logs in as a
+              member, trainer and administrator using real CSRF-protected forms
+              and checks protected routes for each role.
+            </p>
+            <div class="case-study-callout">
+              <p><strong>Testing trade-off:</strong> the system flow gives broad confidence, while focused unit and integration tests would make individual failures easier to locate.</p>
+            </div>
+          </section>
+
+          <section class="case-study-section reveal" id="limits">
+            <p class="eyebrow">Trade-offs</p>
+            <h2>An educational framework with clearly defined limits.</h2>
+            <p>
+              Building the framework exposed routing, sessions, validation and
+              rendering, but a production service would normally use a maintained
+              ecosystem, structured migrations, a production database, deployment
+              automation and operational monitoring. The built-in PHP server and
+              SQLite setup target a local demonstration, not multiple application instances.
+            </p>
+            <p>
+              Production hardening would also add rate limiting, account recovery,
+              secret management, malware scanning or image re-encoding, centralized
+              logs and a formal security review. The value of PulseFit is the
+              complete engineering path and explicit reasoning—not a claim that a
+              small custom framework should replace mature tooling.
+            </p>
+          </section>
+
+          <nav class="case-study-navigation" aria-label="Project pages">
+            <a class="button secondary" href="secure-distributed-chat.html">← Secure Chat</a>
+            <a class="button project-button" href="../index.html#work">All projects →</a>
+          </nav>
+        </div>
+
+        <aside class="case-study-aside reveal">
+          <strong>On this page</strong>
+          <ul class="case-study-toc">
+            <li><a href="#context">Ownership and scope</a></li>
+            <li><a href="#architecture">Request lifecycle</a></li>
+            <li><a href="#workflows">Product workflows</a></li>
+            <li><a href="#data-security">Data and security</a></li>
+            <li><a href="#api-validation">API and evidence</a></li>
+            <li><a href="#limits">Trade-offs</a></li>
+          </ul>
+          <strong>My role</strong>
+          <p>Independent design and implementation across framework, backend, database, API and frontend.</p>
+          <strong>Scope</strong>
+          <p>Member, trainer and administrator workflows in one complete application.</p>
+          <strong>Core idea</strong>
+          <p>Make the complete web request lifecycle visible and enforce business rules at the right layers.</p>
+          <a class="button project-button" href="https://github.com/GuilhermeSa37/pulsefit-gym-management" target="_blank" rel="noreferrer">View source ↗</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Guilherme Sá</p>
+      <p>Software engineering · Systems · Architecture · Product</p>
+    </div>
+  </footer>
+</body>
+</html>

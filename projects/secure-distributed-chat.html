@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secure Distributed Chat — Guilherme Sá</title>
+  <meta name="description" content="Java 21 client-server chat project covering TLS, virtual threads, reconnectable sessions and slow-client isolation.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=20260816-3">
+  <script src="../script.js?v=20260816-3" defer></script>
+</head>
+
+<body class="case-study-page">
+  <a class="skip-link" href="#case-study-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="container navigation" aria-label="Main navigation">
+      <a class="brand" href="../index.html#top" aria-label="Go to Guilherme Sá's homepage">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="6.5" y="6.5" width="11" height="11" rx="2"></rect>
+            <path d="M9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"></path>
+          </svg>
+        </span>
+        <span>Guilherme Sá</span>
+      </a>
+
+      <div class="navigation-actions">
+        <div class="navigation-links" id="navigation-links">
+          <a href="../index.html#work">Projects</a>
+          <a href="../index.html#experience">Experience</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3.5"></circle>
+            <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"></path>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.2 8.2 0 1 0 11.2 11.2Z"></path></svg>
+        </button>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation-links">
+          <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="case-study-content">
+    <section class="case-study-hero">
+      <span class="case-study-brandmark" aria-hidden="true">
+        <svg viewBox="0 0 128 128" focusable="false">
+          <path d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336zM69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58 0 .001-42.731 10.67-22.324 34.187zm32.321 46.958s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.094.171-4.451-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zm40.697 22.747c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725 0-.002.359-.327.468-.617zM76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587zM52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 .001 2.875 2.381 17.647 3.331z"></path>
+        </svg>
+      </span>
+      <div class="container reveal">
+        <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> Selected work</a>
+        <p class="eyebrow">Distributed systems · Java 21</p>
+        <h1>Secure Distributed Chat.</h1>
+        <p class="case-study-lede">
+          A TLS-protected client-server chat system designed around concurrent
+          connections, recoverable user sessions and isolation of slow clients.
+        </p>
+        <div class="case-study-meta" aria-label="Project technologies and themes">
+          <span>Java 21</span><span>TLS 1.3</span><span>Virtual threads</span>
+          <span>TCP sockets</span><span>JUnit</span><span>Gradle</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-main">
+      <div class="container case-study-layout">
+        <div class="case-study-content">
+          <section class="case-study-section reveal" id="context">
+            <p class="eyebrow">Challenge</p>
+            <h2>Keep chat responsive when connections are slow or disappear.</h2>
+            <p>
+              A basic chat server can accept a socket and forward messages.
+              The harder problem is handling many clients at once: one slow
+              connection must not pause a room, and a brief network failure
+              should not immediately erase the user's authenticated state and membership.
+            </p>
+            <p>
+              In a three-person team, I contributed to the initial architecture,
+              TLS and socket communication, concurrency, session recovery,
+              thread-safe shared state, fault tolerance, integration and debugging.
+            </p>
+            <div class="project-facts">
+              <div class="project-fact"><span>Topology</span><strong>Central server with multiple client processes</strong></div>
+              <div class="project-fact"><span>Transport</span><strong>TLS 1.3 over TCP sockets</strong></div>
+              <div class="project-fact"><span>Concurrency</span><strong>Java 21 virtual threads</strong></div>
+              <div class="project-fact"><span>Recovery</span><strong>Token-based sessions independent from sockets</strong></div>
+            </div>
+          </section>
+
+          <section class="case-study-section reveal" id="architecture">
+            <p class="eyebrow">Architecture</p>
+            <h2>A connection is temporary; the user session can survive it.</h2>
+            <p>
+              The client and server communicate through a small text protocol,
+              with one command or response per line over an encrypted socket.
+              Connection handling, authenticated commands, sessions and chat
+              rooms are separated so network lifetime is not confused with user lifetime.
+            </p>
+            <div class="architecture-map" aria-label="Simplified chat architecture">
+              <div class="architecture-node"><strong>Java client</strong><span>Commands, messages and heartbeat replies</span></div>
+              <div class="architecture-node accent"><strong>TLS connection</strong><span>Encrypted reader and writer</span></div>
+              <div class="architecture-node"><strong>Command router</strong><span>Authentication and allowed operations</span></div>
+              <div class="architecture-node accent"><strong>User session</strong><span>Token, room and outbound queue</span></div>
+              <div class="architecture-node"><strong>Room state</strong><span>Members and bounded message history</span></div>
+              <div class="architecture-node"><strong>Shared stores</strong><span>Users, sessions and rooms</span></div>
+            </div>
+            <p>
+              A Java virtual thread is a lightweight thread managed by the
+              runtime. It allowed us to keep straightforward blocking socket
+              code—one reader and one writer per client—without making one
+              operating-system thread the practical cost of every task.
+            </p>
+          </section>
+
+          <section class="case-study-section reveal" id="sessions">
+            <p class="eyebrow">Concurrency and recovery</p>
+            <h2>Queues separate room activity from network speed.</h2>
+            <p>
+              Rooms do not write directly to every socket. They update shared
+              state, take a snapshot of recipients and place the formatted
+              message into each session's bounded outbound queue. Dedicated
+              writer tasks drain those queues. A slow client therefore delays
+              its own delivery instead of holding a room lock or blocking other users.
+            </p>
+            <div class="case-study-callout">
+              <p><strong>Locking rule:</strong> protect shared room state briefly, then perform network I/O after releasing the lock.</p>
+            </div>
+            <ol class="flow-list">
+              <li><div><strong>The connection breaks.</strong> The server detaches the socket but keeps the session for a limited recovery window.</div></li>
+              <li><div><strong>The client reconnects.</strong> A new TLS connection presents the secure session token.</div></li>
+              <li><div><strong>The server validates it.</strong> Expired or invalid tokens are rejected; a valid token retrieves the same user state.</div></li>
+              <li><div><strong>Delivery continues.</strong> The new connection is attached and queued messages can continue to flow.</div></li>
+            </ol>
+            <p>
+              When a queue reaches its fixed capacity, the oldest waiting item
+              is dropped. That is a visible trade-off: bounded memory and server
+              responsiveness take priority over unlimited delivery history for a stalled client.
+            </p>
+          </section>
+
+          <section class="case-study-section reveal" id="security">
+            <p class="eyebrow">Security and failure handling</p>
+            <h2>Security is built into transport, credentials and session lifecycle.</h2>
+            <div class="content-grid">
+              <article class="content-card">
+                <h3>Controls</h3>
+                <ul class="technical-list">
+                  <li>TLS 1.3 protects client-server traffic.</li>
+                  <li>Passwords use a per-user salt and PBKDF2 derivation.</li>
+                  <li>Cryptographically random tokens support resume, expiry and logout.</li>
+                  <li>Only authenticated sessions can perform room operations.</li>
+                </ul>
+              </article>
+              <article class="content-card">
+                <h3>Failure boundaries</h3>
+                <ul class="technical-list">
+                  <li>Heartbeat messages detect connections that silently stop responding.</li>
+                  <li>Bounded queues prevent unlimited memory growth.</li>
+                  <li>Expired disconnected sessions are removed periodically.</li>
+                  <li>The optional local AI integration cannot block normal chat.</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="case-study-section reveal" id="validation">
+            <p class="eyebrow">Evidence</p>
+            <h2>Tests cover components; scenarios exercise the system.</h2>
+            <p>
+              JUnit tests check protocol parsing and the behaviour of the
+              thread-safe collections and outbound queue. System scenarios
+              exercise concurrent users, reconnection, invalid tokens,
+              heartbeat timeouts and slow clients. GitHub Actions builds the
+              Java 21 project and runs the Gradle checks on each change.
+            </p>
+            <p>
+              The most valuable evidence is the interaction between mechanisms:
+              a session remains valid across a socket replacement, room state
+              remains synchronized, and the writer queue prevents network I/O
+              from entering the room's critical section.
+            </p>
+          </section>
+
+          <section class="case-study-section reveal" id="limits">
+            <p class="eyebrow">Trade-offs</p>
+            <h2>A low-level systems project, not a production chat platform.</h2>
+            <p>
+              Using sockets, locks and a custom protocol made concurrency and
+              failure recovery visible. It also leaves deliberate limits: one
+              central server, in-memory session state, local user persistence
+              and no replicated room history. The TLS certificates are for local
+              development, and the optional AI rooms require a separate local service.
+            </p>
+            <p>
+              A production evolution would add persistent and distributed state,
+              stronger telemetry, a versioned protocol and fully automated
+              end-to-end tests. Those constraints are part of the project overview:
+              the project demonstrates the mechanics clearly without claiming a scale it did not test.
+            </p>
+          </section>
+
+          <nav class="case-study-navigation" aria-label="Project pages">
+            <a class="button secondary" href="object-storage-upload-architecture.html">← Object Storage</a>
+            <a class="button project-button" href="pulsefit-gym-management.html">PulseFit →</a>
+          </nav>
+        </div>
+
+        <aside class="case-study-aside reveal">
+          <strong>On this page</strong>
+          <ul class="case-study-toc">
+            <li><a href="#context">Challenge and role</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#sessions">Concurrency and recovery</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#validation">Evidence</a></li>
+            <li><a href="#limits">Trade-offs</a></li>
+          </ul>
+          <strong>My role</strong>
+          <p>Architecture, TLS, sockets, concurrency, sessions, shared state, fault tolerance and integration.</p>
+          <strong>Team</strong>
+          <p>Three-person academic project.</p>
+          <strong>Core idea</strong>
+          <p>Keep recoverable user state independent from temporary network connections.</p>
+          <a class="button project-button" href="https://github.com/GuilhermeSa37/secure-distributed-chat" target="_blank" rel="noreferrer">View source ↗</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Guilherme Sá</p>
+      <p>Software engineering · Systems · Architecture · Product</p>
+    </div>
+  </footer>
+</body>
+</html>

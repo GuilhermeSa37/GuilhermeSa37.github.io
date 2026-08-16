@@ -7,20 +7,20 @@
   <title>Guilherme Sá — Software Engineer</title>
   <meta
     name="description"
-    content="Portfolio of Guilherme Sá, a Computer Engineering graduate interested in software architecture, backend systems, APIs, cloud technologies and product-oriented engineering."
+    content="Portfolio of Guilherme Sá, an Informatics and Computing Engineering graduate interested in building complete, maintainable software systems."
   >
 
   <meta property="og:title" content="Guilherme Sá — Software Engineer">
   <meta
     property="og:description"
-    content="Selected engineering projects, architecture case studies and product experience."
+    content="Selected engineering projects, technical project overviews and product experience."
   >
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/guilherme-sa.jpg">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260816-3">
+  <script src="script.js?v=20260816-3" defer></script>
 </head>
 
 <body>
@@ -81,18 +81,18 @@
 
       <div class="container hero-layout">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Computer Engineering graduate · FEUP</p>
+          <p class="eyebrow">Informatics and Computing Engineering graduate · FEUP</p>
 
           <h1>
-            Software engineering with a
-            <span>systems and architecture mindset.</span>
+            Building thoughtful software systems
+            <span>from architecture to delivery.</span>
           </h1>
 
           <p class="hero-introduction">
             I am Guilherme Sá, an early-career software engineer interested in
-            backend systems, software architecture, APIs, cloud technologies,
-            product engineering and the decisions that make software
-            maintainable and useful.
+            how complete software systems are designed, built and evolved —
+            from technical architecture and backend development to delivery
+            and product needs.
           </p>
 
           <div class="hero-actions">
@@ -107,6 +107,18 @@
           </div>
 
           <div class="profile-actions" aria-label="External profile links">
+            <a
+              class="button quiet branded-button email-button"
+              href="mailto:guilhermesa.pro@gmail.com"
+            >
+              <span class="brand-watermark" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3.5" y="5.5" width="17" height="13" rx="2"></rect>
+                  <path d="m5 7 7 5.5L19 7"></path>
+                </svg>
+              </span>
+              <span class="button-label">Email</span>
+            </a>
             <a
               class="button quiet branded-button github-button"
               href="https://github.com/GuilhermeSa37"
@@ -150,7 +162,7 @@
           <div class="portrait-note">
             <strong>Guilherme Sá</strong>
             <p>Braga, Portugal</p>
-            <span>Backend · Systems · Product engineering</span>
+            <span>Software · Systems · Product engineering</span>
           </div>
         </aside>
       </div>
@@ -217,7 +229,7 @@
       <div class="container section-layout">
         <div class="section-introduction reveal">
           <p class="eyebrow">About</p>
-          <h2>More interested in the whole system than an isolated feature.</h2>
+          <h2>Interested in the system as a whole.</h2>
         </div>
 
         <div class="about-content reveal">
@@ -247,17 +259,63 @@
       <div class="container">
         <div class="section-heading reveal">
           <div>
-            <p class="eyebrow">Selected work</p>
-            <h2>Projects that reflect how I approach engineering.</h2>
+            <p class="eyebrow">Projects</p>
+            <h2>Selected engineering work.</h2>
           </div>
           <p>
             Personal work, selected university projects and a sanitized
-            architecture case study focused on technical reasoning.
+            architecture overview focused on technical reasoning.
           </p>
         </div>
 
-        <div class="project-grid">
+        <div class="project-showcase-toolbar reveal">
+          <p class="project-showcase-position" aria-live="polite">
+            <span data-project-current>01</span>
+            <span aria-hidden="true">/</span>
+            <span data-project-total>04</span>
+            <span class="sr-only">projects</span>
+          </p>
+
+          <div class="project-showcase-navigation" aria-label="Project navigation">
+            <button
+              class="project-showcase-button"
+              type="button"
+              data-project-previous
+              aria-controls="project-showcase"
+              aria-label="Show previous project"
+              disabled
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m14.5 6-6 6 6 6"></path>
+              </svg>
+            </button>
+            <button
+              class="project-showcase-button"
+              type="button"
+              data-project-next
+              aria-controls="project-showcase"
+              aria-label="Show next project"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m9.5 6 6 6-6 6"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="project-showcase"
+          class="project-grid"
+          data-project-showcase
+          role="region"
+          aria-roledescription="carousel"
+          tabindex="0"
+          aria-label="Selected projects. Use the left and right arrow keys to navigate."
+        >
           <article class="project-card project-featured reveal">
+            <span class="project-watermark project-watermark-aws" aria-hidden="true">
+              <img class="aws-brandmark" src="assets/icons/aws-cloud-logo.svg" alt="">
+            </span>
             <div class="project-header">
               <span class="project-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -266,13 +324,13 @@
                 </svg>
               </span>
               <div>
-                <p class="project-type">Featured architecture case study</p>
+                <p class="project-type">Featured architecture project</p>
                 <h3>Object-Storage Upload Architecture</h3>
               </div>
             </div>
 
             <p class="project-summary">
-              A sanitized architecture case study for scalable scientific-data
+              A sanitized architecture overview for scalable scientific-data
               workflows using S3-compatible object storage, presigned URLs,
               multipart and resumable uploads, processing workers and metadata
               coordination.
@@ -300,7 +358,7 @@
             </div>
 
             <p class="confidentiality-note">
-              The case study is intentionally generalized. Proprietary code,
+              The public overview is intentionally generalized. Proprietary code,
               identifying details, private infrastructure and sensitive
               implementation information are excluded.
             </p>
@@ -314,17 +372,27 @@
               <li>Architecture</li>
             </ul>
 
-            <a
-              class="button project-button"
-              href="https://github.com/GuilhermeSa37/object-storage-upload-architecture"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View architecture case study <span aria-hidden="true">↗</span>
-            </a>
+            <div class="project-actions">
+              <a class="button project-button" href="projects/object-storage-upload-architecture.html">
+                View project <span aria-hidden="true">→</span>
+              </a>
+              <a
+                class="project-source-link"
+                href="https://github.com/GuilhermeSa37/object-storage-upload-architecture"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </article>
 
           <article class="project-card reveal">
+            <span class="project-watermark project-watermark-java" aria-hidden="true">
+              <svg viewBox="0 0 128 128" focusable="false">
+                <path d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336zM69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58 0 .001-42.731 10.67-22.324 34.187zm32.321 46.958s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.094.171-4.451-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zm40.697 22.747c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725 0-.002.359-.327.468-.617zM76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587zM52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 .001 2.875 2.381 17.647 3.331z"></path>
+              </svg>
+            </span>
             <div class="project-header">
               <span class="project-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -359,17 +427,27 @@
               <li>Concurrency</li><li>Distributed systems</li>
             </ul>
 
-            <a
-              class="button project-button"
-              href="https://github.com/GuilhermeSa37/secure-distributed-chat"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View repository <span aria-hidden="true">↗</span>
-            </a>
+            <div class="project-actions">
+              <a class="button project-button" href="projects/secure-distributed-chat.html">
+                View project <span aria-hidden="true">→</span>
+              </a>
+              <a
+                class="project-source-link"
+                href="https://github.com/GuilhermeSa37/secure-distributed-chat"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </article>
 
           <article class="project-card reveal">
+            <span class="project-watermark project-watermark-php" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z"></path>
+              </svg>
+            </span>
             <div class="project-header">
               <span class="project-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -403,17 +481,27 @@
               <li>Custom MVC</li><li>REST API</li>
             </ul>
 
-            <a
-              class="button project-button"
-              href="https://github.com/GuilhermeSa37/pulsefit-gym-management"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View repository <span aria-hidden="true">↗</span>
-            </a>
+            <div class="project-actions">
+              <a class="button project-button" href="projects/pulsefit-gym-management.html">
+                View project <span aria-hidden="true">→</span>
+              </a>
+              <a
+                class="project-source-link"
+                href="https://github.com/GuilhermeSa37/pulsefit-gym-management"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </article>
 
           <article class="project-card reveal">
+            <span class="project-watermark project-watermark-webgl" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M3.489 10.164c-.565.548-.885 1.172-.885 1.835 0 2.167 3.415 3.921 7.631 3.921 2.339 0 4.437-.484 5.837-1.335-1.533 1.426-4.265 2.43-7.385 2.43C3.89 17.015 0 14.769 0 11.999s3.89-5.014 8.689-5.014c3.131.002 5.872 1.009 7.398 2.444-1.399-.856-3.504-1.351-5.852-1.351-2.506 0-4.73.621-6.121 1.579l.785 3.395.971-3.481h.737l.971 3.481.805-3.481h.805L7.953 14.11h-.717l-.991-3.566L5.24 14.11h-.714zm19.839 3.48h-.162v.424h-.142v-.424h-.164v-.122h.468zm.064-.122h.209l.095.364.096-.364H24v.546h-.133v-.415h-.002l-.113.415h-.109l-.115-.415h-.003v.415h-.133zm-5.699.515c-.2.084-.399.126-.601.126-.319 0-.608-.055-.863-.166q-.3825-.1665-.645-.459c-.175-.195-.311-.424-.404-.688-.093-.263-.14-.547-.14-.851 0-.313.047-.601.14-.869.093-.269.226-.502.402-.699.175-.2.39-.355.645-.468s.541-.171.863-.171c.215 0 .421.034.621.098.199.064.381.16.543.284s.295.279.399.463.169.395.193.632h-.874c-.055-.233-.159-.408-.315-.525-.155-.118-.343-.176-.567-.176-.207 0-.382.04-.526.12s-.262.187-.35.322a1.41 1.41 0 0 0-.196.459c-.039.171-.062.348-.062.532 0 .175.02.346.062.512.04.167.107.315.196.448.088.133.206.24.35.32s.319.119.526.119c.303 0 .539-.077.705-.23s.262-.375.29-.668h-.922v-.689h1.75v2.255h-.584l-.093-.472c-.162.21-.344.357-.543.441m2.708-4.14v3.395h2.033v.774h-2.949V9.897zm-9.204 1.585c.109.151.191.337.251.557.053.21.08.452.08.716v.047H9.372c.011.41.164.876.807.876.45 0 .703-.344.719-.537l.002-.042h.592l-.007.051c-.008.075-.051.222-.135.377-.049.086-.104.166-.166.239a1.3 1.3 0 0 1-.248.218c-.071.046-.158.1-.287.139-.148.047-.326.069-.543.069-.415 0-.763-.151-1.007-.434a1.43 1.43 0 0 1-.266-.482c-.06-.182-.091-.386-.091-.601 0-.485.12-.896.348-1.186.125-.158.278-.28.457-.362.191-.086.41-.131.654-.131.218 0 .413.043.581.127.165.082.304.202.415.359m-1.064.047c-.402 0-.741.357-.765.785h1.543c-.046-.528-.302-.785-.778-.785m4.373.388c.058.182.086.381.084.588 0 .19-.022.385-.064.563-.049.206-.122.39-.22.545-.11.178-.252.318-.419.415-.186.109-.408.164-.654.164-.228 0-.426-.057-.585-.173a.89.89 0 0 1-.198-.193v.282h-.561V9.983h.59v1.393c.093-.111.202-.2.324-.262.146-.078.313-.118.497-.12.199 0 .383.04.547.118.158.075.295.184.408.324.109.135.193.297.251.481m-.53.67c0-.2-.013-.459-.111-.672-.12-.26-.335-.384-.654-.384-.3 0-.506.135-.628.417-.084.195-.126.452-.126.785 0 .696.412.942.765.942.244 0 .435-.102.565-.303.125-.191.189-.462.189-.785"></path>
+              </svg>
+            </span>
             <div class="project-header">
               <span class="project-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -471,7 +559,7 @@
         <article class="experience-panel reveal">
           <div class="experience-header">
             <div>
-              <p class="role">Software Development Contributor</p>
+              <p class="role">Part-time Software Development Contributor</p>
               <h3>
                 <a
                   class="company-link"
@@ -488,17 +576,17 @@
           </div>
 
           <p class="experience-summary">
-            Contributed within an existing product and technical team through
-            feature development and maintenance, requirements analysis,
-            testing, debugging, integrations and practical engineering
-            decisions.
+            Contributed part-time to an existing HealthTech product and
+            technical team, implementing backend endpoints, fixing bugs and
+            investigating technical issues across connectivity and video-call
+            flows.
           </p>
 
           <div class="experience-points">
-            <p>Translated product and stakeholder needs into technical work.</p>
-            <p>Worked with evolving requirements and existing system constraints.</p>
-            <p>Investigated problems across service and integration boundaries.</p>
-            <p>Balanced quality, uncertainty and iterative product delivery.</p>
+            <p>Implemented and maintained backend endpoints within an existing product.</p>
+            <p>Investigated bugs involving internet connectivity and video-call behaviour.</p>
+            <p>Created unit tests to support changes and reduce regressions.</p>
+            <p>Worked through pull requests and collaborated with the technical team.</p>
           </div>
 
           <ul class="technology-list">
@@ -599,14 +687,25 @@
           <p class="eyebrow">Contact</p>
           <h2>Open to early-career software engineering opportunities.</h2>
           <p>
-            Connect with me through LinkedIn or explore my work on GitHub. I am
-            interested in roles where I can contribute to useful products,
-            learn from experienced engineers and keep developing strong
-            systems and architecture skills.
+            Based in Braga. Open to on-site roles in Braga or Porto, hybrid
+            roles across Northern Portugal, and remote opportunities in
+            Portugal or internationally.
           </p>
         </div>
 
         <div class="contact-actions">
+          <a
+            class="button secondary branded-button email-button"
+            href="mailto:guilhermesa.pro@gmail.com"
+          >
+            <span class="brand-watermark" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3.5" y="5.5" width="17" height="13" rx="2"></rect>
+                <path d="m5 7 7 5.5L19 7"></path>
+              </svg>
+            </span>
+            <span class="button-label">Email me</span>
+          </a>
           <a
             class="button secondary branded-button linkedin-button"
             href="https://www.linkedin.com/in/guilherme-s%C3%A1-6a38b1335/"

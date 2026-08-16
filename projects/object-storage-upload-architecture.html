@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Object-Storage Upload Architecture — Guilherme Sá</title>
+  <meta name="description" content="Technical project overview for reliable large-file uploads using S3-compatible object storage, presigned URLs and resumable multipart uploads.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=20260816-3">
+  <script src="../script.js?v=20260816-3" defer></script>
+</head>
+
+<body class="case-study-page">
+  <a class="skip-link" href="#case-study-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="container navigation" aria-label="Main navigation">
+      <a class="brand" href="../index.html#top" aria-label="Go to Guilherme Sá's homepage">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="6.5" y="6.5" width="11" height="11" rx="2"></rect>
+            <path d="M9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"></path>
+          </svg>
+        </span>
+        <span>Guilherme Sá</span>
+      </a>
+
+      <div class="navigation-actions">
+        <div class="navigation-links" id="navigation-links">
+          <a href="../index.html#work">Projects</a>
+          <a href="../index.html#experience">Experience</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3.5"></circle>
+            <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"></path>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.2 8.2 0 1 0 11.2 11.2Z"></path></svg>
+        </button>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation-links">
+          <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="case-study-content">
+    <section class="case-study-hero">
+      <span class="case-study-brandmark" aria-hidden="true">
+        <img class="aws-brandmark" src="../assets/icons/aws-cloud-logo.svg" alt="">
+      </span>
+      <div class="container reveal">
+        <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> Selected work</a>
+        <p class="eyebrow">Architecture project · 2026</p>
+        <h1>Reliable object-storage upload architecture.</h1>
+        <p class="case-study-lede">
+          A proof of concept for uploading large scientific datasets directly
+          to S3-compatible object storage, without making the application
+          server carry every file byte.
+        </p>
+        <div class="case-study-meta" aria-label="Project technologies and themes">
+          <span>System design</span><span>S3-compatible storage</span>
+          <span>Multipart upload</span><span>FastAPI</span>
+          <span>OpenAPI</span><span>Docker Compose</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study-main">
+      <div class="container case-study-layout">
+        <div class="case-study-content">
+          <section class="case-study-section reveal" id="context">
+            <p class="eyebrow">Context</p>
+            <h2>Large uploads should not turn the backend into a file relay.</h2>
+            <p>
+              The original scientific platform sent datasets through the
+              application server and kept them on its local filesystem. Long
+              transfers therefore consumed application bandwidth and tied
+              storage growth to the server running the product. An interrupted
+              upload could also force the user to restart from the beginning.
+            </p>
+            <p>
+              Our four-person FEUP capstone explored object storage: files are
+              stored as independent objects and accessed through an API rather
+              than as local server files. I led the architecture and contributed
+              substantially to the backend, database and storage integration.
+              The public material is sanitized because the original platform is private.
+            </p>
+            <div class="project-facts">
+              <div class="project-fact"><span>Context</span><strong>Existing scientific software platform</strong></div>
+              <div class="project-fact"><span>Team</span><strong>Four-person FEUP capstone</strong></div>
+              <div class="project-fact"><span>My focus</span><strong>Architecture, backend, database and storage</strong></div>
+              <div class="project-fact"><span>Prototype stack</span><strong>FastAPI, Angular, SQLite, S3-compatible storage and Docker Compose</strong></div>
+            </div>
+          </section>
+
+          <section class="case-study-section reveal" id="scope">
+            <p class="eyebrow">Scope</p>
+            <h2>A working transfer pattern, with production improvements kept separate.</h2>
+            <div class="content-grid">
+              <article class="content-card">
+                <h3>Validated</h3>
+                <ul class="technical-list">
+                  <li>Direct browser-to-storage uploads.</li>
+                  <li>Normal and multipart transfers.</li>
+                  <li>Resume after an interrupted multipart upload.</li>
+                  <li>Duplicate detection and explicit overwrite confirmation.</li>
+                  <li>Backend-managed file metadata and upload sessions.</li>
+                </ul>
+              </article>
+              <article class="content-card">
+                <h3>Next iteration</h3>
+                <ul class="technical-list">
+                  <li>Several simultaneous resumable uploads.</li>
+                  <li>Checksums to confirm that a reselected file is identical.</li>
+                  <li>Automatic cleanup of abandoned uploads.</li>
+                  <li>More complete failure, load and concurrency testing.</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="case-study-section reveal" id="architecture">
+            <p class="eyebrow">Architecture</p>
+            <h2>The backend controls access; storage receives the bytes.</h2>
+            <p>
+              The application still authenticates the user, checks ownership,
+              reserves a storage location and records progress. It then issues
+              a <strong>presigned URL</strong>: a temporary link that permits one
+              specific upload without revealing storage credentials. The
+              browser uses that link to send the file directly to storage.
+            </p>
+            <div class="architecture-map" aria-label="Simplified architecture">
+              <div class="architecture-node"><strong>Browser</strong><span>Starts and transfers the upload</span></div>
+              <div class="architecture-node accent"><strong>Backend</strong><span>Authentication, rules and upload lifecycle</span></div>
+              <div class="architecture-node"><strong>Object storage</strong><span>Receives and keeps file bytes</span></div>
+              <div class="architecture-node"><strong>Database</strong><span>Ownership, metadata and progress</span></div>
+              <div class="architecture-node accent"><strong>Workers</strong><span>Process raw datasets into results</span></div>
+              <div class="architecture-node"><strong>Access layer</strong><span>Authorizes temporary downloads</span></div>
+            </div>
+            <p>
+              A storage adapter keeps S3-specific operations behind one backend
+              interface. This makes the application depend on the S3-compatible
+              API rather than on credentials or configuration from one provider.
+              “S3-compatible” here means storage that implements the relevant
+              Amazon S3 API operations; the prototype used a local compatible service.
+            </p>
+          </section>
+
+          <section class="case-study-section reveal" id="upload-flow">
+            <p class="eyebrow">Upload and recovery</p>
+            <h2>Large files are divided into parts that can be retried independently.</h2>
+            <p>
+              A multipart upload splits one large file into numbered pieces.
+              If the connection fails, only missing pieces need to be sent again.
+              The backend stores an upload-session record so the process is not
+              dependent on one browser tab remaining open.
+            </p>
+            <ol class="flow-list">
+              <li><div><strong>Create the session.</strong> The backend validates the request, checks conflicts and starts a multipart upload in storage.</div></li>
+              <li><div><strong>Request temporary links.</strong> The browser asks for URLs only for the next required parts.</div></li>
+              <li><div><strong>Transfer directly.</strong> Parts go from browser to storage while the interface reports progress.</div></li>
+              <li><div><strong>Resume safely.</strong> After a failure, the backend checks which parts storage actually has and the browser sends only the missing ones.</div></li>
+              <li><div><strong>Complete once.</strong> The backend finalizes the ordered parts, verifies the resulting object and marks the file complete.</div></li>
+            </ol>
+            <div class="case-study-callout">
+              <p><strong>Source of truth:</strong> browser state improves the experience, but storage and backend records decide what has really been uploaded.</p>
+            </div>
+          </section>
+
+          <section class="case-study-section reveal" id="decisions">
+            <p class="eyebrow">Decisions</p>
+            <h2>The design trades a simpler data path for a richer lifecycle.</h2>
+            <div class="decision-grid">
+              <article class="decision-card"><span class="decision-number">01</span><h3>Direct transfer</h3><p>The backend authorizes the operation without carrying the full dataset, reducing pressure on application resources.</p></article>
+              <article class="decision-card"><span class="decision-number">02</span><h3>Persistent sessions</h3><p>Upload progress is represented explicitly so interrupted transfers can continue rather than restart.</p></article>
+              <article class="decision-card"><span class="decision-number">03</span><h3>Explicit recovery</h3><p>Database and storage cannot share one transaction, so retries compare both systems and bring them back into agreement.</p></article>
+            </div>
+            <div class="content-grid">
+              <article class="content-card">
+                <h3>Security boundaries</h3>
+                <ul class="technical-list">
+                  <li>Authenticate and authorize every lifecycle request.</li>
+                  <li>Limit each temporary URL to one object, operation and short time window.</li>
+                  <li>Validate names, part numbers, sizes and checksums.</li>
+                  <li>Keep storage credentials out of the browser.</li>
+                </ul>
+              </article>
+              <article class="content-card">
+                <h3>Operational cost</h3>
+                <ul class="technical-list">
+                  <li>More states and failure cases than a basic form upload.</li>
+                  <li>Expired links must be renewed.</li>
+                  <li>Abandoned parts require background cleanup.</li>
+                  <li>Completion must be safe to retry after a lost response.</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="case-study-section reveal" id="evidence">
+            <p class="eyebrow">Evidence and limits</p>
+            <h2>What this project demonstrates.</h2>
+            <p>
+              The prototype exercised complete uploads, interruption and resume,
+              duplicate handling, overwrite confirmation and download access.
+              More importantly, it required us to reason about ownership and
+              consistency across a browser, a relational database and object storage.
+            </p>
+            <p>
+              It is not presented as production-ready. A real deployment would
+              still need automated cleanup, stronger observability, integration
+              tests against the chosen storage provider, failure injection and
+              controlled large-file load tests. The full repository documents
+              the detailed API, state model and additional trade-offs for readers
+              who want implementation-level depth.
+            </p>
+          </section>
+
+          <nav class="case-study-navigation" aria-label="Project pages">
+            <a class="button secondary" href="../index.html#work">← All projects</a>
+            <a class="button project-button" href="secure-distributed-chat.html">Secure Distributed Chat →</a>
+          </nav>
+        </div>
+
+        <aside class="case-study-aside reveal">
+          <strong>On this page</strong>
+          <ul class="case-study-toc">
+            <li><a href="#context">Context and problem</a></li>
+            <li><a href="#scope">Scope</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#upload-flow">Upload and recovery</a></li>
+            <li><a href="#decisions">Decisions and security</a></li>
+            <li><a href="#evidence">Evidence and limits</a></li>
+          </ul>
+          <strong>My role</strong>
+          <p>Architecture lead and substantial contributor to the backend, database and storage integration.</p>
+          <strong>Team</strong>
+          <p>Four-person FEUP capstone project.</p>
+          <strong>Scope</strong>
+          <p>Validated proof of concept plus clearly identified architectural improvements.</p>
+          <a class="button project-button" href="https://github.com/GuilhermeSa37/object-storage-upload-architecture" target="_blank" rel="noreferrer">Full documentation ↗</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Guilherme Sá</p>
+      <p>Software engineering · Systems · Architecture · Product</p>
+    </div>
+  </footer>
+</body>
+</html>
